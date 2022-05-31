@@ -10,12 +10,13 @@ class Student:
         self.name = name
           
         def check_name ():
-
-            if any(chr.isdigit() for chr in self.name):
-                self.name =  input('You entered a number. Enter text alone: ')
+            while True:
+                if any(chr.isdigit() for chr in self.name):
+                    self.name =  input('You entered a number. Enter text alone: ')
                 
-            else:
-                return self.name 
+                else:
+                    return self.name 
+                    break
 
         name = check_name()
             
@@ -35,11 +36,12 @@ class Student:
             def exp2():
                 if any(chr.isalpha() for chr in self.age):
                     return True
-
-            if exp1() or exp2():
-                self.age =  input('You entered text/punctuation/decimal. Enter whole number alone: ')
-            else:
-                return self.age
+            while True:
+                if exp1() or exp2():
+                    self.age =  input('You entered text/punctuation/decimal. Enter whole number alone: ')
+                else:
+                    return self.age
+                    break
 
         
 
